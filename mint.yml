@@ -1,0 +1,29 @@
+project: ChimeraSpoofer
+version: "1.0"
+
+type: exe  # produce a standalone executable
+
+# Glob patterns for source files that Mint should compile.
+sources:
+  - src/**/*.cpp
+  - platform/linux/*.cpp
+
+# Additional include directories searched by the compiler
+include_dirs:
+  - include
+  - src
+
+# Compiler flags common to all translation units
+cxxflags:
+  - -std=c++17
+  - -Wall
+  - -Wextra
+  - -fPIC
+
+# Linker flags
+ldflags:
+  - -ldl
+  - -pthread
+
+# Output binary path (relative to build dir). Mint will create the parent dirs.
+output: chimera 
